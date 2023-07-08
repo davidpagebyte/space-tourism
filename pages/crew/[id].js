@@ -5,7 +5,6 @@ import { getCrewMember } from '../../lib/crew';
 
 export async function getStaticProps({ params }) {
     const crewData = getCrewMember(params.id);
-    console.log(crewData)
     return {
         props: {
             crewData,

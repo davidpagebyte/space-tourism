@@ -12,7 +12,6 @@ import { app_constants } from '../lib/data/globals';
 import NavigationMenu from './NavigationMenu';
 
 export default function Layout({ children, home }) {
-	console.log(app_constants)
 	return (
 		<div className={styles.container}>
 			<Head>

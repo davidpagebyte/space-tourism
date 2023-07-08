@@ -25,6 +25,8 @@ export default function Home({ homeData }) {
 export async function getStaticProps() {
 	const homeData = app_constants.home
 	return {
-		props: homeData
+		props: {
+			homeData
+		}
 	}
 }
