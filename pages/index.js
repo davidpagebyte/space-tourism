@@ -4,43 +4,27 @@ import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
+import { app_constants } from '../lib/data/globals';
 
-export default function Home({ allPostsData }) {
+export default function Home({ homeData }) {
+	
 	return (
 		<Layout home>
 			<Head>
 				<title>{siteTitle}</title>
 			</Head>
-			<section className={utilStyles.headingMd}>
-				<p>[Hello I am a software developer]</p>
-				<p>
-					(This is a sample website - you’ll be building a site like this on{' '}
-					<a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-				</p>
-			</section>
-			<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-				<h2 className={utilStyles.headingLg}>Blog</h2>
-				<ul className={utilStyles.list}>
-					{allPostsData.map(({ id, date, title }) => (
-						<li className={utilStyles.listItem} key={id}>
-							<Link href={`/posts/${id}`}>{title}</Link>
-							<br />
-							<small className={utilStyles.lightText}>
-								<Date dateString={date} />
-							</small>
-						</li>
-					))}
-				</ul>
+			<section>
+				<p>{homeData.header}</p>
+				<p>{homeData.highlight}</p>
+				<p>{homeData.content}</p>
 			</section>
 		</Layout>
 	);
 }
 
 export async function getStaticProps() {
-	const allPostsData = getSortedPostsData()
+	const homeData = app_constants.home
 	return {
-		props: {
-			allPostsData
-		}
+		props: homeData
 	}
 }
