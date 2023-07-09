@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { getAllDestinations } from '../../lib/destination';
+import { getAllDestinationsStaticPaths } from '../../lib/destination';
 import Layout from '../../components/layout';
 import { getDestination } from '../../lib/destination';
 
@@ -13,7 +13,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const paths = getAllDestinations();
+    const paths = getAllDestinationsStaticPaths();
     return {
         paths,
         fallback: false,

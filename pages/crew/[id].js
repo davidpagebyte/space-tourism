@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { getAllCrew } from '../../lib/crew';
+import { getAllCrewStaticPaths } from '../../lib/crew';
 import Layout from '../../components/layout';
 import { getCrewMember } from '../../lib/crew';
 
@@ -13,7 +13,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const paths = getAllCrew();
+    const paths = getAllCrewStaticPaths();
     return {
         paths,
         fallback: false,

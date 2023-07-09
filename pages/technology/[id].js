@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { getAllTech } from '../../lib/technology';
+import { getAllTechStaticPaths } from '../../lib/technology';
 import Layout from '../../components/layout';
 import { getTechnology } from '../../lib/technology';
 
@@ -13,7 +13,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const paths = getAllTech();
+    const paths = getAllTechStaticPaths();
     return {
         paths,
         fallback: false,
