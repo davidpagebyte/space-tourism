@@ -2,12 +2,14 @@ import Head from 'next/head';
 import { getAllDestinationsStaticPaths } from '../../lib/destination';
 import Layout from '../../components/layout';
 import { getDestination } from '../../lib/destination';
+import { getIds } from '../../lib/utils';
+import Link from 'next/link';
 
 export async function getStaticProps({ params }) {
     const destData = getDestination(params.id);
     return {
         props: {
-            destData,
+            destData
         },
     };
 }
@@ -22,11 +24,19 @@ export async function getStaticPaths() {
 
 
 export default function Destination({ destData }) {
+    const destinationLinks = getIds('destination').map((el,idx)=>{
+        return <li key={idx}>
+            <Link href={`/destination/${el}`}>{el}</Link>
+        </li>
+    })
     return (
         <Layout>
             <Head>
                 <title>{destData.name}</title>
             </Head>
+            <ul>
+                {destinationLinks}
+            </ul>
             <article>
                 <p>{destData.name}</p>
                 <p>{destData.description}</p>
