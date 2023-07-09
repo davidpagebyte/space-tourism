@@ -7,9 +7,11 @@ import Link from 'next/link';
 
 export async function getStaticProps({ params }) {
     const destData = getDestination(params.id);
+    const destinationIds = getIds('destination')
     return {
         props: {
-            destData
+            destData,
+            destinationIds
         },
     };
 }
@@ -22,9 +24,8 @@ export async function getStaticPaths() {
     };
 }
 
-
-export default function Destination({ destData }) {
-    const destinationLinks = getIds('destination').map((el,idx)=>{
+export default function Destination({ destData, destinationIds }) {
+    const destinationLinks = destinationIds.map((el,idx)=>{
         return <li key={idx}>
             <Link href={`/destination/${el}`}>{el}</Link>
         </li>
