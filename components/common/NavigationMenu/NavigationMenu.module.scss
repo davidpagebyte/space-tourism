@@ -4,3 +4,7 @@
 .navigation_background{
     background-color: globals.$primary-color;
 }
+
+.heading{
+    @include globals.main-heading(150px)
+}

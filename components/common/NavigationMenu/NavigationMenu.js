@@ -5,7 +5,7 @@ import styles from './NavigationMenu.module.scss'
 export default function NavigationMenu(){
     const menuItems = app_constants.sections.map((el,idx)=>{
         return <li key={idx}>
-           <Link href={el.url}>{el.id}</Link>
+           <Link className={styles.heading} href={el.url}>{el.id}</Link>
         </li>
     })
     return (

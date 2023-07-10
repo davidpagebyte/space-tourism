@@ -1,1 +1,53 @@
-$primary-color: red;
+$primary-color: #FFF;
+$secondary-color: #D0D6F9;
+$third-color: #0B0D17;
+
+@mixin main-heading($size:32px, $transform: none){
+    color: $primary-color;
+    font-family: Bellefair;
+    font-size: $size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: $transform;
+}
+
+@mixin section-heading($weight: 400, $color: $primary-color){
+    color: $color;
+    font-family: BarlowCondensed;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: $weight;
+    line-height: normal;
+    letter-spacing: 4.725px;
+}
+
+@mixin main-subheading($size: 14px, $spacing: 2.362px){
+    color: $primary-color;
+    font-family: BarlowCondensed;
+    font-size: $size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: $spacing;
+    text-transform: uppercase;
+}
+
+.body-text{
+    color: #FFF;
+    font-family: Barlow;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.distance-font{
+    color: $primary-color;
+    font-family: Bellefair;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
