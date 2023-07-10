@@ -1,5 +1,6 @@
-import { app_constants } from "../lib/data/globals";
+import { app_constants } from "../../../lib/data/globals";
 import Link from "next/link";
+import styles from './NavigationMenu.module.scss'
 
 export default function NavigationMenu(){
     const menuItems = app_constants.sections.map((el,idx)=>{
@@ -8,6 +9,6 @@ export default function NavigationMenu(){
         </li>
     })
     return (
-        <ul>{menuItems}</ul>
+        <ul className={styles.navigation_background}>{menuItems}</ul>
     )
 };

@@ -7,9 +7,7 @@ import Link from 'next/link';
 const name = 'David';
 export const siteTitle = 'Next.js Sample Website';
 
-import { app_constants } from '../lib/data/globals';
-
-import NavigationMenu from './NavigationMenu';
+import NavigationMenu from './common/NavigationMenu/NavigationMenu';
 
 export default function Layout({ children, home }) {
 	return (
