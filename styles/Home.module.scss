@@ -1,0 +1,9 @@
+@use './globals';
+
+.app-container{
+    background-color: red;
+}
+
+@media (max-width: globals.$mobile-breakpoint) {
+  
+}

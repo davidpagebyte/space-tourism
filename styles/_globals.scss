@@ -2,6 +2,12 @@ $primary-color: #FFF;
 $secondary-color: #D0D6F9;
 $third-color: #0B0D17;
 
+
+$fullscreen-width: 1920px;
+$fullscreen-height: 1080px;
+$tablet-breakpoint: 768px;
+$mobile-breakpoint: 375px;
+
 @mixin main-heading($size:32px, $transform: none){
     color: $primary-color;
     font-family: Bellefair;

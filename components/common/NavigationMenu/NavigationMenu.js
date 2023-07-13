@@ -5,10 +5,10 @@ import styles from './NavigationMenu.module.scss'
 export default function NavigationMenu(){
     const menuItems = app_constants.sections.map((el,idx)=>{
         return <li key={idx}>
-           <Link className={styles.heading} href={el.url}>{el.id}</Link>
+           <Link  href={el.url}><span>{`0${idx}`}</span>{el.id}</Link>
         </li>
     })
     return (
-        <ul className={styles.navigation_background}>{menuItems}</ul>
+        <ul className={styles['navigation-menu']}>{menuItems}</ul>
     )
 };

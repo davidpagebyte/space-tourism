@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { getAllDestinationsStaticPaths } from '../../lib/destination';
-import Layout from '../../components/layout';
+import Layout from '../../components/common/Layout/Layout';
 import { getDestination } from '../../lib/destination';
 import { getIds } from '../../lib/utils';
 import Link from 'next/link';
