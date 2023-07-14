@@ -23,3 +23,30 @@
     right: -537px;
     z-index: 1;
 }
+
+.mobile-menu-toggle{
+    display: none;
+}
+
+@media (max-width: globals.$tablet-breakpoint) {
+    .logo-style{
+        top: 24px;
+        left: 48px;
+    }
+
+    .logo-style:after{
+        content: none;
+    }
+}
+
+@media (max-width: globals.$mobile-breakpoint) {
+    .logo-style{
+        width: 40px;
+        height: 40px;
+        top: 24px;
+        left: 24px;
+    }
+    .mobile-menu-toggle{
+        display: block;
+    }
+}

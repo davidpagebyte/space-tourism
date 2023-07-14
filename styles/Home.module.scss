@@ -1,9 +1,17 @@
 @use './globals';
 
-.app-container{
-    background-color: red;
+.background{
+    background-image: url('./../public/images/home/background-home-desktop.jpg');
+}
+
+@media (max-width: globals.$tablet-breakpoint) {
+    .background{
+        background-image: url('./../public/images/home/background-home-tablet.jpg');
+    }
 }
 
 @media (max-width: globals.$mobile-breakpoint) {
-  
+    .background{
+        background-image: url('./../public/images/home/background-home-mobile.jpg');
+    }
 }

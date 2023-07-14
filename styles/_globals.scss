@@ -5,8 +5,8 @@ $third-color: #0B0D17;
 
 $fullscreen-width: 1920px;
 $fullscreen-height: 1080px;
-$tablet-breakpoint: 768px;
-$mobile-breakpoint: 375px;
+$tablet-breakpoint: 934px;
+$mobile-breakpoint: 546px;
 
 @mixin main-heading($size:32px, $transform: none){
     color: $primary-color;
@@ -56,4 +56,8 @@ $mobile-breakpoint: 375px;
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+}
+
+.background-image-adjust{
+    height: 100%;
 }

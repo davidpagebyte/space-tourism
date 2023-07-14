@@ -10,11 +10,11 @@ import styles from './../styles/Home.module.scss'
 export default function Home({ homeData }) {
 	
 	return (
-		<Layout home>
+		<Layout>
 			<Head>
 				<title>{siteTitle}</title>
 			</Head>
-			<section>
+			<section className={styles.background}>
 				<p>{homeData.header}</p>
 				<p>{homeData.highlight}</p>
 				<p>{homeData.content}</p>

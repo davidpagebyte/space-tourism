@@ -12,7 +12,7 @@ import styles from './Layout.module.scss'
 export default function Layout({ children, home }) {
 	return (
 		<div className={styles['app-container']}>
-			<div className='wrapper'>
+			<div className={styles['wrapper-adjust']}>
 				<Head>
 					<link rel="icon" href="/favicon.ico" />
 					<meta
@@ -21,7 +21,7 @@ export default function Layout({ children, home }) {
 					/>
 				</Head>
 				<Header></Header>
-				<main>{children}</main>
+				<main className={styles['dynamic-background-height']}>{children}</main>
 			</div>
 		</div>
 	);
