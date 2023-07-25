@@ -1,0 +1,63 @@
+@use './../../../styles/globals';
+@use "sass:math";
+
+$base-font:32px;
+$mobile-font:20px;
+
+%link-shared {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: globals.$primary-color;
+    display: block;
+    text-align: center;
+    padding-top: calc(50% - math.div($base-font,2));
+    cursor: pointer;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.round-link{
+    @extend %link-shared;
+    @include globals.main-heading($base-font,uppercase,globals.$third-color,2px)
+}
+
+.main{
+    z-index: 3;
+}
+
+
+
+.main::after{
+    content: "";
+    @extend %link-shared;
+    background-color: rgba(255,255,255,0.1036275252699852);
+    top: 0px;
+    z-index: 3;
+    position: absolute;
+}
+
+.main:hover::after{
+    top: -88px;
+    left: -88px;
+    width: calc(100% + 176px);
+    height: calc(100% + 176px);
+}
+
+@media (max-width: globals.$tablet-breakpoint) {
+
+}
+
+@media (max-width: globals.$mobile-breakpoint) {
+    .round-link{
+        @include globals.main-heading($mobile-font,uppercase,globals.$third-color,1.25px);
+        padding-top: calc(50% - math.div($mobile-font,2));
+    }
+    .main:hover::after{
+        top: -72px;
+        left: -72px;
+        width: calc(100% + 145px);
+        height: calc(100% + 145px);
+    }
+}

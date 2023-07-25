@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Date from '../components/date';
 import { app_constants } from '../lib/data/globals';
 import styles from './../styles/Home.module.scss'
+import RoundLinkButton from '../components/common/RoundLinkButton/RoundLinkButton';
 
 export default function Home({ homeData }) {
 	
@@ -15,9 +16,18 @@ export default function Home({ homeData }) {
 				<title>{siteTitle}</title>
 			</Head>
 			<section className={styles.background}>
-				<p>{homeData.header}</p>
-				<p>{homeData.highlight}</p>
-				<p>{homeData.content}</p>
+				<article className={styles.homepage}>
+					<main>
+						<h2>{homeData.header}</h2>
+						<h3>{homeData.highlight}</h3>
+						<p>{homeData.content}</p>
+					</main>
+					<aside>
+						<div>
+							<RoundLinkButton type="main" text="EXPLORE" href={app_constants.sections[1].url}></RoundLinkButton>
+						</div>
+					</aside>
+				</article>
 			</section>
 		</Layout>
 	);

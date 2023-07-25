@@ -8,24 +8,26 @@ $fullscreen-height: 1080px;
 $tablet-breakpoint: 934px;
 $mobile-breakpoint: 546px;
 
-@mixin main-heading($size:32px, $transform: none){
-    color: $primary-color;
+@mixin main-heading($size:32px, $transform: none, $color: $primary-color, $spacing: initial, $height: normal){
+    color: $color;
     font-family: Bellefair;
     font-size: $size;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: $height;
     text-transform: $transform;
+    letter-spacing: $spacing;
 }
 
-@mixin section-heading($weight: 400, $color: $primary-color){
+@mixin section-heading($color: $primary-color,$weight: 400, $transform: none, $size: 28px, $spacing: 4.725px){
     color: $color;
     font-family: BarlowCondensed;
-    font-size: 28px;
+    font-size: $size;
     font-style: normal;
     font-weight: $weight;
     line-height: normal;
-    letter-spacing: 4.725px;
+    letter-spacing: $spacing;
+    text-transform: $transform;
 }
 
 @mixin main-subheading($size: 14px, $spacing: 2.362px){
@@ -36,16 +38,16 @@ $mobile-breakpoint: 546px;
     font-weight: 400;
     line-height: normal;
     letter-spacing: $spacing;
-    text-transform: uppercase;
+    text-transform: uppercase;  
 }
 
-.body-text{
-    color: #FFF;
+@mixin body-text($size: 18px, $height: 32px){
+    color: $secondary-color;
     font-family: Barlow;
-    font-size: 18px;
+    font-size: $size;
     font-style: normal;
     font-weight: 400;
-    line-height: 32px;
+    line-height: $height;
 }
 
 .distance-font{
