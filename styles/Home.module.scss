@@ -1,0 +1,116 @@
+@use './globals';
+
+.background{
+    background-image: url('./../public/images/home/background-home-desktop.jpg');
+}
+
+.homepage{
+    padding: 386px 0 0 11.45%;
+    > *{
+        display: inline-block;
+        vertical-align: top;
+    }
+    > aside{
+        width: 35.29%;
+        height: 450px;
+        margin: 20px 0 0 23.37%;
+        > div{
+            max-width: 274px;
+            height: 274px;
+            margin: calc(50% - 137px) auto;
+        }
+    }
+    > main{
+        width: 35.29%;
+        h2{
+            @include globals.section-heading(globals.$secondary-color, 400, uppercase);
+            margin-bottom: 24px;
+        }
+        h3{
+            @include globals.main-heading(150px,uppercase);
+            margin-bottom: 25px
+        }
+        p{
+            @include globals.body-text();
+        }
+    }
+}
+
+@media (max-width: globals.$tablet-breakpoint) {
+    .background{
+        background-image: url('./../public/images/home/background-home-tablet.jpg');
+    }
+    .homepage{
+        max-width: 450px;
+        margin: 0 auto;
+        padding: 190px 0 0 0;
+        > *{
+            display: block;
+        }
+        > aside{
+            width: 242px;
+            height: 242px;
+            margin: 0 auto;
+            > div{
+                max-width: 242px;
+                height: 242px;
+                margin: calc(50% - 137px) auto;
+            }
+        }
+        > main{
+           width: 100%; 
+           text-align: center;
+           margin-bottom: 172px;
+           h2{
+            @include globals.section-heading(globals.$secondary-color, 400, uppercase, 20px, 3.375px);
+            margin-top: 12px;
+            margin-bottom: 14px;
+            }
+            h3{
+                @include globals.main-heading(150px,uppercase,globals.$primary-color,initial,150px);
+                margin-bottom: 12px;
+            }
+            p{
+                @include globals.body-text(16px, 28px);
+            }
+        }
+    }
+}
+
+@media (max-width: globals.$mobile-breakpoint) {
+    .background{
+        background-image: url('./../public/images/home/background-home-mobile.jpg');
+    }
+    .homepage{
+        padding: 100px 0 0 0;
+        > *{
+            
+        }
+        > aside{
+           width: 100%;
+           height: 150px;
+           max-width: 150px;
+           margin: 0 auto;
+            > div{
+                width: 100%;
+                height: 150px;
+            }
+        }
+        > main{
+            margin-bottom: 143px;
+           h2{
+            @include globals.section-heading(globals.$secondary-color, 400, uppercase, 16px, 2.7px);
+            margin-bottom: 16px
+            }
+            h3{
+                @include globals.main-heading(80px, uppercase, globals.$primary-color, initial, 100px);
+                margin-bottom: 17px;
+            }
+            p{
+                @include globals.body-text(15px, 25px);
+                max-width: 327px;
+                margin: 0 auto;
+            }
+        }
+    }
+}

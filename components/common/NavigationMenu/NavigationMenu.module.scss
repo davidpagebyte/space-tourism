@@ -1,10 +1,133 @@
 
 @use './../../../styles/globals';
 
+%nav-menu{
+    position: absolute;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40.774227142333984px);
+    span{
+        font-weight: 700;
+        margin-right: 10px;
+    }
+    li{
+        a{
+            color:inherit;
+            text-decoration: none;
+        }
+    }
+}
+
 .navigation_background{
     background-color: globals.$primary-color;
 }
 
 .heading{
     @include globals.main-heading(150px)
+}
+
+.navigation-menu{
+    @extend %nav-menu;
+    width: 706px;
+    height: 56px;
+    top: 40px;
+    right: 0px;
+    padding-left: 124px;
+    padding-top: 40px;
+    @include globals.main-subheading(16px, 2.7px);
+    li{
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 52px;
+        span{
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        a{
+            color:inherit;
+            text-decoration: none;
+        }
+    }
+}
+
+.menu-index{
+    
+}
+
+.mobile-navigation{
+    @extend %nav-menu;
+    @include globals.main-subheading(16px, 2.7px);
+    width: 67.63%;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    display:none;
+    z-index:4;
+    ul{
+        margin-top: 118px;
+    }
+    li{
+        margin: 0 0 32px 33px;
+    }
+}
+
+.mobile-close{
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    top: 34px;
+    right: 26px;
+    cursor: pointer;
+}
+
+.mobile-hide{
+    display: none !important;
+}
+
+.mobile-menu-toggle{
+    display: none;
+    width: 24px;
+    height: 21px;
+    position: absolute;
+    top: 33px;
+    right: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: globals.$tablet-breakpoint) {
+    .navigation-menu{
+        width: 450px;
+        height: 96px;
+        top: 0px;
+        padding: 0;
+        @include globals.main-subheading();
+        li{
+            margin-right: 32px;
+            margin-top: 40px;
+        }
+        li:first-child{
+            margin-left: 50px;
+        }
+    }
+
+    .menu-index{
+        display: none;
+    }
+}
+
+@media (max-width: globals.$mobile-breakpoint) {
+    .mobile-menu-toggle{
+        display: block;
+    }
+
+    .navigation-menu{
+        display: none;
+    }
+
+    .mobile-navigation{
+        display:block;
+    }
+
+    .mobile-navigation .menu-index{
+        display: initial;
+    }
 }

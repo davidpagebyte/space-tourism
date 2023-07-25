@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { getAllTechStaticPaths } from '../../lib/technology';
-import Layout from '../../components/layout';
+import Layout from '../../components/common/Layout/Layout';
 import { getTechnology } from '../../lib/technology';
 
 export async function getStaticProps({ params }) {

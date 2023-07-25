@@ -1,0 +1,52 @@
+@use './../../../styles/globals';
+
+.logo-style{
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 64px;
+    left: 55px;
+    img{
+        width: 100%;
+        height: 100%
+    }
+}
+
+.logo-style:after{
+    content: "";
+    height: 1px;
+    background-color: globals.$primary-color;
+    width: 473px;
+    opacity: 0.2514851987;
+    position: absolute;
+    top: 24px;
+    right: -537px;
+    z-index: 1;
+}
+
+.mobile-menu-toggle{
+    display: none;
+}
+
+@media (max-width: globals.$tablet-breakpoint) {
+    .logo-style{
+        top: 24px;
+        left: 39px;
+    }
+
+    .logo-style:after{
+        content: none;
+    }
+}
+
+@media (max-width: globals.$mobile-breakpoint) {
+    .logo-style{
+        width: 40px;
+        height: 40px;
+        top: 24px;
+        left: 24px;
+    }
+    .mobile-menu-toggle{
+        display: block;
+    }
+}

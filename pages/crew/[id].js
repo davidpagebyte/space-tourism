@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { getAllCrewStaticPaths } from '../../lib/crew';
-import Layout from '../../components/layout';
+import Layout from '../../components/common/Layout/Layout';
 import { getCrewMember } from '../../lib/crew';
 
 export async function getStaticProps({ params }) {

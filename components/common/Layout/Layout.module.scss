@@ -1,0 +1,22 @@
+@use './../../../styles/globals';
+
+.app-container{
+    
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    min-height: 900px;
+}
+
+.wrapper-adjust{
+    height: 100%;
+}
+
+.dynamic-background-height{
+    height: 100%;
+    section{
+        height: inherit;
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+}
